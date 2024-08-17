@@ -1,0 +1,20 @@
+[package]
+name = "llama"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+byteorder = "1.4.3"
+rand = "0.8.5"
+memmap2 = "0.5.3"
+sp1-zkvm = "1.1.0"
+serde = { version = "1.0", features = ["derive"] }
+bincode = "1.3"
+
+[[bin]]
+name = "llama"
+path = "src/main.rs"
+
+[lib]
+name = "llama"
+path = "src/main.rs"

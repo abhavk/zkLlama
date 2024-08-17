@@ -1,0 +1,10 @@
+[package]
+name = "fibonacci-lib"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+alloy-sol-types = { workspace = true }
+byteorder = { workspace = true }
+rand = { workspace = true }
+memmap2 = { workspace = true }
