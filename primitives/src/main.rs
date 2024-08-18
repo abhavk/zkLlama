@@ -122,7 +122,7 @@ impl Transformer {
 
         let wcls_size = config.vocab_size as usize * config.dim as usize;
         println!("wcls size: {}", wcls_size * 4);
-        let wcls = read_f32_slice(&data, offset, wcls_size)?;
+        let wcls: Vec<f32> = read_f32_slice(&data, offset, wcls_size)?;
         println!("wcls: {:?}", wcls);  
         offset += wcls_size * 4;
 
@@ -358,6 +358,7 @@ impl Sampler {
 
 fn read_f32_slice(data: &[u8], offset: usize, count: usize) -> Result<Vec<f32>, Box<dyn std::error::Error>> {
     let end = offset + count * 4;
+    println!("end: {}", end);
     if end > data.len() {
         return Err("Attempted to read past end of data".into());
     }
